@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|c:\\users\\bradl\\source\\repos\\lhmmqtt\\lhmmqtt\\deviceclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|solutionrelative:lhmmqtt\\deviceclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|c:\\users\\bradl\\source\\repos\\lhmmqtt\\lhmmqtt\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|solutionrelative:lhmmqtt\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|c:\\users\\bradl\\source\\repos\\lhmmqtt\\lhmmqtt\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|solutionrelative:lhmmqtt\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|c:\\users\\bradl\\source\\repos\\lhmmqtt\\lhmmqtt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|solutionrelative:lhmmqtt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|c:\\users\\bradl\\source\\repos\\lhmmqtt\\lhmmqtt\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|solutionrelative:lhmmqtt\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|c:\\users\\bradl\\source\\repos\\lhmmqtt\\lhmmqtt\\mqttclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|solutionrelative:lhmmqtt\\mqttclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|c:\\users\\bradl\\source\\repos\\lhmmqtt\\lhmmqtt\\config.yaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4CD8EAAC-2B13-4D46-A8DB-8CBB92373451}|LHMMQTT\\LHMMQTT.csproj|solutionrelative:lhmmqtt\\config.yaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeviceClass.cs",
+              "DocumentMoniker": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\DeviceClass.cs",
+              "RelativeDocumentMoniker": "LHMMQTT\\DeviceClass.cs",
+              "ToolTip": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\DeviceClass.cs",
+              "RelativeToolTip": "LHMMQTT\\DeviceClass.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAYwDQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T17:39:42.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MQTTClient.cs",
+              "DocumentMoniker": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\MQTTClient.cs",
+              "RelativeDocumentMoniker": "LHMMQTT\\MQTTClient.cs",
+              "ToolTip": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\MQTTClient.cs",
+              "RelativeToolTip": "LHMMQTT\\MQTTClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T16:11:50.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\Settings.cs",
+              "RelativeDocumentMoniker": "LHMMQTT\\Settings.cs",
+              "ToolTip": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\Settings.cs",
+              "RelativeToolTip": "LHMMQTT\\Settings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T15:46:54.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "config.yaml",
+              "DocumentMoniker": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\config.yaml",
+              "RelativeDocumentMoniker": "LHMMQTT\\config.yaml",
+              "ToolTip": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\config.yaml",
+              "RelativeToolTip": "LHMMQTT\\config.yaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-04-30T15:46:12.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Sensor.cs",
+              "DocumentMoniker": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\Sensor.cs",
+              "RelativeDocumentMoniker": "LHMMQTT\\Sensor.cs",
+              "ToolTip": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\Sensor.cs",
+              "RelativeToolTip": "LHMMQTT\\Sensor.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAzwBsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T21:15:06.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Device.cs",
+              "DocumentMoniker": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\Device.cs",
+              "RelativeDocumentMoniker": "LHMMQTT\\Device.cs",
+              "ToolTip": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\Device.cs",
+              "RelativeToolTip": "LHMMQTT\\Device.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAUwDgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T16:08:43.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\Program.cs",
+              "RelativeDocumentMoniker": "LHMMQTT\\Program.cs",
+              "ToolTip": "C:\\Users\\bradl\\source\\repos\\LHMMQTT\\LHMMQTT\\Program.cs",
+              "RelativeToolTip": "LHMMQTT\\Program.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAjwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T14:38:36.47Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

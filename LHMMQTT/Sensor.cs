@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using HiveMQtt.MQTT5.Types;
+using LibreHardwareMonitor.Hardware;
+using Newtonsoft.Json.Linq;
+
+namespace LHMMQTT {
+    internal class Sensor {
+        public string Name { get; }
+        public string StateTopic { get; }
+        public DeviceClass DeviceClass { get; }
+        public string UniqueId { get; }
+        public JObject HaDevice { get; }
+        private JObject _sensor;
+
+        public Sensor(IHardware hdw, ISensor hdwSensor, JObject haDevice) {
+            HaDevice = haDevice;
+            Name = $"{hdw.Name} {hdwSensor.Name}";
+            UniqueId = CalculateUniqueId(HaDevice.GetValue("name").ToString(), hdw.Name, hdwSensor.Name, hdwSensor.SensorType);
+            StateTopic = $"lhmmqtt/{UniqueId}{hdwSensor.Identifier}/state";
+
+            // Figure out the device class and unit of measurement
+            if (Enum.TryParse(hdwSensor.SensorType.ToString(), ignoreCase: true, out DeviceClass deviceClass)) {
+                DeviceClass = deviceClass;
+            }
+            else {
+                Console.WriteLine($"Unknown SensorType '{hdwSensor.SensorType.ToString()}'");
+            }
+        }
+
+        public async Task Configure(MQTTClient client) {
+            // Only build the sensor once as it shouldn't change during runtime
+            if (_sensor == null) {
+                _sensor = new JObject();
+                _sensor.Add("name", Name);
+                _sensor.Add("state_topic", StateTopic);
+                if (!DeviceClass.GetSensorClass().Equals("")) {
+                    _sensor.Add("device_class", DeviceClass.GetSensorClass());
+                }
+                _sensor.Add("unit_of_measurement", DeviceClass.GetUnit());
+                _sensor.Add("unique_id", UniqueId);
+                _sensor.Add("device", HaDevice);
+            }
+
+            Console.WriteLine($"Configure sensor '{Name}' ({DeviceClass})");
+            await client.Publish($"homeassistant/sensor/{HaDevice.GetValue("name")}/{UniqueId}/config",
+                _sensor.ToString());
+        }
+
+        public async Task SetValue(MQTTClient client, dynamic value) {
+            await client.Publish(StateTopic, String.Format(DeviceClass.GetValueFormat(), value), QualityOfService.AtLeastOnceDelivery);
+        }
+
+        public static string CalculateUniqueId(string haDeviceName, string hdwName, string hdwSensorName, SensorType sensorType) {
+            return
+                $"{haDeviceName}_{Regex.Replace(hdwName, @"[^a-zA-Z0-9]", "")}_{Regex.Replace(hdwSensorName, @"[^a-zA-Z0-9]", "")}_{sensorType}";
+        }
+    }
+}
