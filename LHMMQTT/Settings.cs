@@ -6,34 +6,59 @@ using YamlDotNet.Serialization.NamingConventions;
 
 namespace LHMMQTT {
     public class AppSettings {
-        public MQTT MQTT { get; set; }
-        public Updates Updates { get; set; }
+        public required MQTT MQTT { get; set; }
+        public required Updates Updates { get; set; }
+        public required Sensors Sensors { get; set; }
     }
 
     public class MQTT {
-        public string Hostname { get; set; }
-        public int Port { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public required string Hostname { get; set; }
+        public required int Port { get; set; }
+        public required string Username { get; set; }
+        public required string Password { get; set; }
     }
 
     public class Updates {
-        public int Delay { get; set; }
+        public required int Delay { get; set; }
+    }
+
+    public class Sensors {
+        public required bool CPU { get; set; }
+        public required bool GPU { get; set; }
+        public required bool Memory { get; set; }
+        public required bool Motherboard { get; set; }
+        public required bool Controller { get; set; }
+        public required bool Networking { get; set; }
+        public required bool Storage { get; set; }
     }
 
     public static class Settings {
-        public static AppSettings Current { get; private set; }
+        public static AppSettings? Current { get; private set; }
 
-        public static void LoadFromConfig() {
-            var yaml = File.ReadAllText("config.yaml");
+        public static bool LoadFromConfig() {
+            // Read contents of config.yaml
+            string yaml = String.Empty;
+            try {
+                yaml = File.ReadAllText("config.yaml");
+            } catch (Exception err) {
+                Console.WriteLine($"Failed to load config.yaml: {err.Message}");
+                return false;
+            }
 
-            var deserializer = new DeserializerBuilder()
-                .WithNamingConvention(PascalCaseNamingConvention.Instance)
-                .Build();
+            // Attempt to parse YAML into settings values
+            try {
+                var deserializer = new DeserializerBuilder()
+                    .WithNamingConvention(PascalCaseNamingConvention.Instance)
+                    .Build();
+                var config = deserializer.Deserialize<Dictionary<string, AppSettings>>(yaml);
 
-            var config = deserializer.Deserialize<Dictionary<string, AppSettings>>(yaml);
+                Current = config["AppSettings"];
+            } catch (Exception err) {
+                Console.WriteLine($"Failed to parse configuration values: {err.Message}");
+                return false;
+            }
 
-            Current = config["AppSettings"];
+            return true;
         }
     }
 }

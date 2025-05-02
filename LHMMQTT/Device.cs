@@ -19,13 +19,13 @@ namespace LHMMQTT {
 
             // TODO: need a way to make this configurable
             _computer = new Computer {
-                IsCpuEnabled = true,
-                IsGpuEnabled = true,
-                IsMemoryEnabled = false,
-                IsMotherboardEnabled = false,
-                IsControllerEnabled = false,
-                IsNetworkEnabled = false,
-                IsStorageEnabled = false
+                IsCpuEnabled = Settings.Current.Sensors.CPU,
+                IsGpuEnabled = Settings.Current.Sensors.GPU,
+                IsMemoryEnabled = Settings.Current.Sensors.Memory,
+                IsMotherboardEnabled = Settings.Current.Sensors.Motherboard,
+                IsControllerEnabled = Settings.Current.Sensors.Controller,
+                IsNetworkEnabled = Settings.Current.Sensors.Networking,
+                IsStorageEnabled = Settings.Current.Sensors.Storage
             };
 
             _computer.Open();
