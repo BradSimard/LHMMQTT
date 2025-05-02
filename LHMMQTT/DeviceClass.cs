@@ -69,21 +69,18 @@ namespace LHMMQTT {
     }
 
     [AttributeUsage(AttributeTargets.Field)]
-    public class UnitAttribute : Attribute {
-        public string Unit { get; }
-        public UnitAttribute(string unit) => Unit = unit;
+    public class UnitAttribute(string unit) : Attribute {
+        public string Unit { get; } = unit;
     }
 
     [AttributeUsage(AttributeTargets.Field)]
-    public class SensorClassAttribute : Attribute {
-        public string SensorClass { get; }
-        public SensorClassAttribute(string sensorClass) => SensorClass = sensorClass;
+    public class SensorClassAttribute(string sensorClass) : Attribute {
+        public string SensorClass { get; } = sensorClass;
     }
 
     [AttributeUsage(AttributeTargets.Field)]
-    public class ValueFormatAttribute : Attribute {
-        public string ValueFormat { get; }
-        public ValueFormatAttribute(string valueFormat) => ValueFormat = valueFormat;
+    public class ValueFormatAttribute(string valueFormat) : Attribute {
+        public string ValueFormat { get; } = valueFormat;
     }
 
 
