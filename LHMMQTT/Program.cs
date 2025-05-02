@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 using HiveMQtt.Client;
 using HiveMQtt.Client.Options;
 using LibreHardwareMonitor.Hardware;
@@ -50,7 +50,7 @@ class Program {
         Stopwatch stopwatch = new Stopwatch();
 
         while (true) {
-            stopwatch.Start();
+            stopwatch.Restart();
 
             // Make sure the MQTT connection is still alive
             if (!client.IsConnected()) {
