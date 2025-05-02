@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using HiveMQtt.MQTT5.Types;
 using LibreHardwareMonitor.Hardware;
 using Newtonsoft.Json.Linq;
+using Serilog;
 
 namespace LHMMQTT {
     internal class Sensor {
@@ -28,7 +29,7 @@ namespace LHMMQTT {
                 DeviceClass = deviceClass;
             }
             else {
-                Console.WriteLine($"Unknown SensorType '{hdwSensor.SensorType.ToString()}'");
+                Log.Information($"Unknown SensorType '{hdwSensor.SensorType.ToString()}'");
             }
         }
 
@@ -43,15 +44,17 @@ namespace LHMMQTT {
                 }
                 _sensor.Add("unit_of_measurement", DeviceClass.GetUnit());
                 _sensor.Add("unique_id", UniqueId);
+                _sensor.Add("expire_after", Settings.Current.Updates.Delay * 3); // Miss 3 updates and we'll consider the sensor unavailable
                 _sensor.Add("device", HaDevice);
             }
 
-            Console.WriteLine($"Configure sensor '{Name}' ({DeviceClass})");
+            Log.Information($"Configure sensor '{Name}' ({DeviceClass})");
             await client.Publish($"homeassistant/sensor/{HaDevice.GetValue("name")}/{UniqueId}/config",
                 _sensor.ToString());
         }
 
         public async Task SetValue(MQTTClient client, dynamic value) {
+            Log.Information($"Set sensor '{Name}' to value '{String.Format(DeviceClass.GetValueFormat(), value)}'");
             await client.Publish(StateTopic, String.Format(DeviceClass.GetValueFormat(), value), QualityOfService.AtLeastOnceDelivery);
         }
 

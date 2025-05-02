@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using LibreHardwareMonitor.Hardware;
 using Newtonsoft.Json.Linq;
+using Serilog;
 
 namespace LHMMQTT {
     public class Device {

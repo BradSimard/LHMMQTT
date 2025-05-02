@@ -1,5 +1,6 @@
 ﻿using HiveMQtt.Client;
 using HiveMQtt.Client.Options;
+using Serilog;
 
 namespace LHMMQTT {
     internal class MQTTClient {

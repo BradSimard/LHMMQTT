@@ -5,12 +5,24 @@ using LibreHardwareMonitor.Hardware;
 using Newtonsoft.Json.Linq;
 using LHMMQTT;
 using System.Diagnostics;
+using Serilog;
 
 class Program {
     static async Task Main(string[] args) {
+        // Configure logger
+        Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("app.log")
+            .CreateLogger();
+
+        // Make sure logger is closed when application exits
+        AppDomain.CurrentDomain.ProcessExit += (s, e) => {
+            Log.CloseAndFlush();
+        };
+
         // Load app settings for configuration values
         if (!Settings.LoadFromConfig()) {
-            Console.WriteLine("Please correct issues with config before running again!");
+            Log.Information("Please correct issues with config before running again!");
             return;
         }
 
@@ -59,7 +71,7 @@ class Program {
                     if (sensor != null) {
                         updateValueTasks.Add(sensor.SetValue(client, hdwSensor.Value));
                     } else {
-                        Console.WriteLine($"Couldn't find sensor for '{uniqueId}'");
+                        Log.Information($"Couldn't find sensor for '{uniqueId}'");
                     }
                 }
             }
