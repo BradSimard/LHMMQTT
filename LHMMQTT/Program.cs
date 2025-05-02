@@ -9,7 +9,10 @@ using System.Diagnostics;
 class Program {
     static async Task Main(string[] args) {
         // Load app settings for configuration values
-        Settings.LoadFromConfig();
+        if (!Settings.LoadFromConfig()) {
+            Console.WriteLine("Please correct issues with config before running again!");
+            return;
+        }
 
         // Run initialization process
         // This is where we figure out the information about the PC itself as well as setup all the sensors
