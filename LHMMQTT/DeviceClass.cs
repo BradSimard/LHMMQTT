@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace LHMMQTT {
     public enum DeviceClass {
@@ -43,10 +44,10 @@ namespace LHMMQTT {
         [ValueFormat("{0:0}")]
         Factor,
 
-        [Unit("GB"), SensorClass("data_size")]
+        [Unit("GB"), SensorClass("data_size"), ValueFormat("{0:0}")]
         Data,
 
-        [Unit("MB"), SensorClass("data_size")]
+        [Unit("MB"), SensorClass("data_size"), ValueFormat("{0:0}")]
         SmallData,
 
         [Unit("bps"), SensorClass("")]
