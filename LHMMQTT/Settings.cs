@@ -42,7 +42,7 @@ namespace LHMMQTT {
             try {
                 yaml = File.ReadAllText("config.yaml");
             } catch (Exception err) {
-                Log.Information($"Failed to load config.yaml: {err.Message}");
+                Log.Fatal($"Failed to load config.yaml: {err.Message}");
                 return false;
             }
 
@@ -55,7 +55,7 @@ namespace LHMMQTT {
 
                 Current = config["AppSettings"];
             } catch (Exception err) {
-                Log.Information($"Failed to parse configuration values: {err.Message}");
+                Log.Fatal($"Failed to parse configuration values: {err.Message}");
                 return false;
             }
 

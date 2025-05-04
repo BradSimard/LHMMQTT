@@ -16,9 +16,9 @@ namespace LHMMQTT {
 
         public Device() {
             Name = getSafeName();
-            Identifier = Name; // TODO: There's probably something better we can use
+            Identifier = Name; //TODO Better way to identify the device?
 
-            // TODO: need a way to make this configurable
+            // Use config to determine what sensors we're interested in
             _computer = new Computer {
                 IsCpuEnabled = Settings.Current.Sensors.CPU,
                 IsGpuEnabled = Settings.Current.Sensors.GPU,

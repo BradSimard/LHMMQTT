@@ -20,7 +20,7 @@ namespace LHMMQTT {
         [Unit("MHz"), SensorClass("frequency"), ValueFormat("{0:0}")]
         Clock,
 
-        [Unit("°C"), SensorClass("temperature"), ValueFormat("{0:0}")]
+        [Unit("C"), SensorClass("temperature"), ValueFormat("{0:0}")] // °C degree symbol doesn't seem to render correctly and I don't know why
         Temperature,
 
         [Unit("%"), ValueFormat("{0:0}")]
