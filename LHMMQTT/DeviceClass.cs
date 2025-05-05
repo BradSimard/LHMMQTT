@@ -17,16 +17,16 @@ namespace LHMMQTT {
         [Unit("W"), SensorClass("power"), ValueFormat("{0:F2}")]
         Power,
 
-        [Unit("MHz"), SensorClass("frequency"), ValueFormat("{0:0}")]
+        [Unit("MHz"), SensorClass("frequency")]
         Clock,
 
-        [Unit("C"), SensorClass("temperature"), ValueFormat("{0:0}")] // °C degree symbol doesn't seem to render correctly and I don't know why
+        [Unit("C"), SensorClass("temperature")] // °C degree symbol doesn't seem to render correctly and I don't know why
         Temperature,
 
-        [Unit("%"), ValueFormat("{0:0}")]
+        [Unit("%")]
         Load,
 
-        [Unit("MHz"), SensorClass("frequency"), ValueFormat("{0:0}")]
+        [Unit("MHz"), SensorClass("frequency")]
         Frequency,
 
         [Unit("RPM"), SensorClass("speed")]
@@ -35,19 +35,16 @@ namespace LHMMQTT {
         [Unit("L/min"), SensorClass("volume_flow_rate")]
         Flow,
 
-        [ValueFormat("{0:0}")]
         Control,
 
-        [ValueFormat("{0:0}")]
         Level,
 
-        [ValueFormat("{0:0}")]
         Factor,
 
-        [Unit("GB"), SensorClass("data_size"), ValueFormat("{0:0}")]
+        [Unit("GB"), SensorClass("data_size")]
         Data,
 
-        [Unit("MB"), SensorClass("data_size"), ValueFormat("{0:0}")]
+        [Unit("MB"), SensorClass("data_size")]
         SmallData,
 
         [Unit("bps"), SensorClass("")]
@@ -59,7 +56,7 @@ namespace LHMMQTT {
         [Unit("Wh"), SensorClass("energy")]
         Energy,
 
-        [Unit("dB"), SensorClass("sound_pressure"), ValueFormat("{0:0}")]
+        [Unit("dB"), SensorClass("sound_pressure")]
         Noise,
 
         [Unit("S/m"), SensorClass("")]
@@ -98,7 +95,7 @@ namespace LHMMQTT {
 
         public static string GetValueFormat(this DeviceClass value) {
             var member = value.GetType().GetMember(value.ToString()).FirstOrDefault();
-            return member?.GetCustomAttribute<ValueFormatAttribute>()?.ValueFormat ?? "{0}";
+            return member?.GetCustomAttribute<ValueFormatAttribute>()?.ValueFormat ?? "{0:0}";
         }
     }
 }
